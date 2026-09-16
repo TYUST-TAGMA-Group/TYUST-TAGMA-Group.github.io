@@ -1,3 +1,11 @@
+// Reloading the page (F5) normally restores the browser's remembered
+// scroll position rather than starting at the top; forcing this keeps
+// every refresh landing back at the top of the page instead.
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 const content_dir = 'contents/'
 const config_file = 'config.yml'
 const section_names = ['home', 'awards', 'experience', 'publications'];
