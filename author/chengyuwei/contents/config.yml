@@ -1,0 +1,9 @@
+title: 程玉威's Homepage
+page-top-title: Yuwei Cheng | TAGMA
+top-section-bg-text: Be what you wanna be ！
+home-subtitle: Yuwei Cheng&ensp;|&ensp;程玉威
+copyright-text: '&copy; TAGMA Group 2025-2028. All Rights Reserved.'
+permissions:
+  contents: read
+  pages: write
+  id-token: write   # 这个极其重要，用于生成 OIDC 令牌

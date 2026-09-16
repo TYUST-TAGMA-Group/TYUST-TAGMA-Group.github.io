@@ -77,8 +77,7 @@ groups:
         period: M.S. Student (09/2025–)
         photo: static/assets/img/cheng-yuwei.png
         supervisor: Supervised by Prof. Haifeng Yang
-        # TODO: 程玉威的主页在他自己的仓库/账号下（xiaotiancai100/Graphic-Learning-Group），
-        # 部署上线后把真实地址填在这里，如 https://xiaotiancai100.github.io/Graphic-Learning-Group/
+        homepage: author/chengyuwei/index.html
       - name: Biyao He 贺弼尧
         period: M.S. Student (09/2025–)
         photo: static/assets/img/he-biyao.jpg
