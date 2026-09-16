@@ -2,7 +2,7 @@
 
 TAGMA（Theory and Applications of Graph Machine leArning）课题组官网，王杰老师课题组。
 
-线上地址：https://tyust-tagma-lab.github.io/
+线上地址：https://tyust-tagma-group.github.io/
 
 ## 目录结构
 
