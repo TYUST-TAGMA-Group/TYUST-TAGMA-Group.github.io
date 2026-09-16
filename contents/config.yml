@@ -1,0 +1,9 @@
+title: TAGMA 图机器学习理论与应用研究小组
+page-top-title: TAGMA
+top-section-bg-text: Understanding Intelligence through Structure.
+home-subtitle: TAGMA Group&ensp;|&ensp;图机器学习理论与应用研究小组
+copyright-text: '&copy; TAGMA Group 2026-2028. All Rights Reserved.'
+permissions:
+  contents: read
+  pages: write
+  id-token: write   # 这个极其重要，用于生成 OIDC 令牌

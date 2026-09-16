@@ -1,0 +1,28 @@
+# TAGMA 团队成果数据（历年论文、专利等）
+# 改这个文件 + 刷新浏览器即可看到效果。
+#
+# publications / patents 各是一个列表，每条：
+#   date   必须，年份+月份，格式 "YYYY.MM"，如 "2026.05"
+#   text   必须，条目文字（作者、标题、发表信息自己写全）
+#
+# 下面几条标了"（示例）"，只是为了把页面框架撑起来看效果，
+# 正式上线前请替换成真实的论文/专利信息。
+publications:
+  - date: "2026.06"
+    text: >-
+      Zhang San（示例）, Jie Wang†. Structured Representation Learning for
+      Graph Machine Learning. Preprint, 2026.
+  - date: "2026.02"
+    text: >-
+      Li Si（示例）, Haifeng Yang, Jie Wang†. Continual Graph Learning under
+      Distribution Shift. ICML 2026.
+  - date: "2025.09"
+    text: >-
+      Wang Wu（示例）, Jianghui Cai, Jie Wang†. Molecular Graph Representation
+      for Property Prediction. NeurIPS 2025.
+
+patents:
+  - date: "2026.04"
+    text: 一种基于图结构的分子性质预测方法及装置（示例），发明专利，申请号 ZLXXXXXXXX。
+  - date: "2025.11"
+    text: 一种持续图学习模型训练系统（示例），发明专利，申请号 ZLXXXXXXXX。

@@ -1,0 +1,689 @@
+@import "./styles.css";
+
+
+:root{
+    --h-title-color:#3948d2;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+.header {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 10000;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.bg-bottom {
+    background-color: var(--h-title-color);
+}
+
+section[id] {
+    scroll-margin-top: 4.5rem;
+}
+
+.news-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 5rem;
+}
+
+.news-carousel-col {
+    flex: 3 1 0;
+    min-width: 0;
+    padding-left: 1.5rem;
+}
+
+.news-list-col {
+    flex: 2 1 0;
+    min-width: 0;
+}
+
+@media screen and (max-width: 900px) {
+    .news-layout {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.news-carousel {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-bottom: 2.5rem;
+}
+
+.news-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+    padding: 0.5rem 3rem 1.5rem;
+}
+
+.news-slide-img {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 0.6rem;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Text-only news items get the same aspect-ratio slot as photo items
+   (instead of no image), so every carousel slide renders at the same
+   height and the prev/next arrows stop jumping between slides. */
+.news-slide-img--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #eef0fb, #e3e7fb);
+    color: var(--h-title-color);
+    font-size: 2.75rem;
+}
+
+.news-slide-body {
+    min-width: 0;
+    width: 100%;
+}
+
+.news-date {
+    display: block;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--h-title-color);
+    margin-bottom: 0.4rem;
+}
+
+.news-text {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #333;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.news-list-wrap {
+    max-width: 100%;
+    margin: 0;
+    min-height: 12rem;
+}
+
+/* Selector is on the #news-pagination id (that's what scripts.js's
+   renderNewsListPage() actually targets - there's no .news-pagination
+   class in the markup), so this must stay an id selector or it silently
+   never matches and the buttons fall back to bare browser chrome. */
+#news-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: 1.5rem;
+}
+
+#news-pagination button {
+    border: none;
+    background: #eef0fb;
+    color: var(--h-title-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+#news-pagination button:hover:not(:disabled) {
+    background: var(--h-title-color);
+    color: #fff;
+}
+
+#news-pagination button.active {
+    background: var(--h-title-color);
+    color: #fff;
+}
+
+#news-pagination button:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.news-list-year {
+    color: var(--h-title-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 1.5rem 0 0.75rem;
+}
+
+.news-list-year:first-child {
+    margin-top: 0;
+}
+
+ul.news-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.news-list li {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.7rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+ul.news-list li:last-child {
+    border-bottom: none;
+}
+
+.news-list-date {
+    font-weight: 700;
+    color: var(--h-title-color);
+    margin-right: 0.4rem;
+}
+
+ul.news-list li.achievement-new {
+    position: relative;
+}
+
+.achievement-new::before {
+    content: 'New';
+    position: absolute;
+    top: -0.3rem;
+    left: -1.6rem;
+    transform: rotate(-20deg);
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    pointer-events: none;
+    animation: achievement-new-blink 0.6s steps(1) infinite;
+}
+
+@keyframes achievement-new-blink {
+    0%, 49% { color: #ff3b30; }
+    50%, 100% { color: #2ecc40; }
+}
+
+.news-slide-media {
+    width: 100%;
+}
+
+/* Prev/next are a single pair of siblings of .carousel-inner (unaffected by
+   which slide is currently sliding through), so their on-screen position
+   stays put across slide transitions. `top` is set per-pixel by
+   positionNewsCarouselControls() in scripts.js, matching the image's own
+   vertical center (plus a small downward nudge) rather than the whole
+   slide's center, which would vary with the caption's line count. Every
+   slide's media box shares the same fixed width, so the 3rem slide padding
+   (.news-slide) leaves exactly enough clearance for the 2.5rem-wide button
+   to fully overflow past the image edge without being clipped by the
+   carousel's overflow: hidden. */
+.news-carousel .carousel-control-prev,
+.news-carousel .carousel-control-next {
+    position: absolute;
+    bottom: auto;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    opacity: 1;
+}
+
+.news-carousel .carousel-control-prev {
+    left: 0.5rem;
+}
+
+.news-carousel .carousel-control-next {
+    right: 0.5rem;
+}
+
+.news-carousel .carousel-control-prev-icon,
+.news-carousel .carousel-control-next-icon {
+    background-color: var(--h-title-color);
+    border-radius: 50%;
+    padding: 0.9rem;
+    background-size: 45%;
+}
+
+.news-carousel .carousel-indicators {
+    position: static;
+    margin-top: 0.5rem;
+}
+
+.news-carousel .carousel-indicators [data-bs-target] {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--h-title-color);
+    opacity: 0.3;
+    border: none;
+}
+
+.news-carousel .carousel-indicators .active {
+    opacity: 1;
+}
+
+/* These must come after the base .news-slide / .carousel-control-prev/next
+   rules above (equal specificity + later source order = wins), otherwise
+   the unconditional base rules always win regardless of viewport width and
+   the overrides below silently never apply. */
+@media screen and (max-width: 900px) {
+    /* The 3rem side padding on .news-slide exists to give the fully-
+       overflowing 2.5rem control buttons room without being clipped by
+       the carousel's overflow: hidden - fine on a wide desktop column,
+       but once the column drops to full page width below this breakpoint
+       that same 3rem eats a much bigger share of it and squeezes the
+       photo. Scale both the button and its clearance down together so
+       the overflow effect survives without stealing so much width. */
+    .news-slide {
+        padding-left: 2.25rem;
+        padding-right: 2.25rem;
+    }
+
+    .news-carousel .carousel-control-prev,
+    .news-carousel .carousel-control-next {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .news-carousel .carousel-control-prev {
+        left: 0.25rem;
+    }
+
+    .news-carousel .carousel-control-next {
+        right: 0.25rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .news-slide {
+        padding-left: 1.75rem;
+        padding-right: 1.75rem;
+    }
+
+    .news-carousel .carousel-control-prev,
+    .news-carousel .carousel-control-next {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+
+    .news-carousel .carousel-control-prev {
+        left: 0;
+    }
+
+    .news-carousel .carousel-control-next {
+        right: 0;
+    }
+
+    .news-carousel .carousel-control-prev-icon,
+    .news-carousel .carousel-control-next-icon {
+        background-size: 40%;
+    }
+}
+
+.top-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10rem 0 8rem;
+    background-position: center;
+    background-size: cover;
+    min-height: 22rem;
+}
+
+.top-section h2 {
+    font-weight: 400;
+}
+
+.top-section .top-section-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-width: 0;
+}
+
+.top-section:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.group-photo-frame {
+    position: absolute;
+    right: 5rem;
+    bottom: -6rem;
+    width: min(32%, 22rem);
+    z-index: 20;
+}
+
+@media screen and (max-width: 767px) {
+    .top-section {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 6rem 1.5rem 2rem;
+        min-height: 0;
+    }
+
+    .top-section h2 {
+        font-size: 2.2rem;
+    }
+
+    /* Overlapping the photo on the banner needs careful math against variable
+       heading length; below tablet width it's simpler and more robust to drop
+       the overlap and just stack the photo in normal flow below the heading. */
+    .group-photo-frame {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        max-width: 22rem;
+        margin: 1.5rem auto 0;
+    }
+
+    .pt-photo-clear {
+        padding-top: 2rem;
+    }
+}
+
+.group-photo-placeholder {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    border-radius: 0.5rem;
+    background: #eef0fb;
+    border: 4px solid #fff;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #8890c9;
+    overflow: hidden;
+}
+
+.group-photo-placeholder i {
+    font-size: 2.5rem;
+}
+
+.group-photo-placeholder span {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.group-photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pt-photo-clear {
+    padding-top: 5rem;
+}
+
+.nav-logo {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin: -1.4rem 0;
+}
+
+#mainNav .navbar-brand {
+    font-size: 1.75rem;
+}
+
+section header h2{
+    font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+    color: var(--h-title-color);
+    font-size: 2.3rem;
+    line-height: 4rem;
+}
+
+section .main-body{
+    font-size: 1.3rem;
+    font-weight: 200;
+    line-height: 2.4rem;
+}
+
+section .main-body h4 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+section .main-body blockquote {
+    margin-bottom: 1.5rem;
+}
+
+section .main-body p {
+    margin-bottom: 1.25rem;
+}
+
+
+.bg-gradient-primary-to-secondary-light {
+    background: linear-gradient(45deg, #fcfcfc, #ffffff) !important;
+}
+
+.bg-gradient-primary-to-secondary-gray {
+    background: linear-gradient(45deg, #f0f0f0, #f1f1f1) !important;
+}
+
+.bg-team-tint {
+    background: linear-gradient(180deg, #f5f6fd, #eef0fb) !important;
+}
+
+
+
+.tagma-acronym-line {
+    font-weight: 400;
+    font-size: 1.15rem;
+    letter-spacing: 0.01em;
+}
+
+.tagma-letter {
+    font-weight: 700;
+    color: var(--h-title-color);
+    font-size: 1.3em;
+    text-decoration: underline;
+    text-decoration-color: rgba(57, 72, 210, 0.4);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+}
+
+.tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0.75rem 0 1.5rem;
+}
+
+.tag-row .tag {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    background: #eef0fb;
+    color: var(--h-title-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: default;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.tag-row .tag:hover {
+    transform: scale(1.06);
+    background: #e2e6fb;
+    box-shadow: 0 4px 10px rgba(57, 72, 210, 0.2);
+    position: relative;
+    z-index: 5;
+}
+
+.people-role-heading {
+    text-align: center;
+    font-weight: 600;
+    color: var(--h-title-color);
+    font-size: 1.3rem;
+    margin: 2.5rem 0 1.5rem;
+}
+
+.people-role-heading--lead {
+    font-weight: 800;
+}
+
+.people-role-heading:first-child {
+    margin-top: 0;
+}
+
+.people-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.person-card {
+    width: 12.5rem;
+    text-align: center;
+}
+
+.person-links {
+    display: flex;
+    justify-content: center;
+    gap: 0.7rem;
+    margin-top: 0.5rem;
+}
+
+.person-links a {
+    color: #9aa0c3;
+    font-size: 1.05rem;
+    line-height: 1;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.person-links a:hover {
+    color: var(--h-title-color);
+}
+
+.person-avatar-link {
+    display: block;
+    transition: transform 0.15s ease;
+}
+
+.person-avatar-link:hover {
+    transform: translateY(-3px);
+}
+
+.person-avatar-link:hover .person-avatar {
+    box-shadow: 0 4px 12px rgba(57, 72, 210, 0.35);
+}
+
+.person-avatar {
+    width: 8.5rem;
+    height: 8.5rem;
+    margin: 0 auto 0.75rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #eef0fb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.person-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 22%;
+}
+
+.person-avatar i {
+    font-size: 3.5rem;
+    color: #b9bee8;
+}
+
+.person-name {
+    font-weight: 600;
+    color: var(--h-title-color);
+    font-size: 1.05rem;
+    line-height: 1.4rem;
+    white-space: nowrap;
+}
+
+.person-caption {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: #777;
+    line-height: 1.3rem;
+}
+
+.people-empty {
+    text-align: center;
+    font-style: italic;
+    font-weight: 300;
+    color: #999;
+    margin-bottom: 1rem;
+}
+
+.alumni-table {
+    width: 100%;
+    max-width: 34rem;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.alumni-table th,
+.alumni-table td {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #e2e2e2;
+    font-size: 0.95rem;
+    font-weight: 300;
+    text-align: left;
+}
+
+.alumni-table th {
+    font-weight: 600;
+    color: var(--h-title-color);
+}
+
+@media screen and (max-width: 480px) {
+    .container.px-5 {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+    }
+
+    .top-section {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .top-section h2 {
+        font-size: 1.9rem;
+    }
+
+    .group-photo-frame {
+        max-width: 20rem;
+    }
+
+    .person-card {
+        width: 9.5rem;
+    }
+
+    .people-grid {
+        gap: 1.5rem 1.25rem;
+    }
+}
+
+

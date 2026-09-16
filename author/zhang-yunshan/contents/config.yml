@@ -1,0 +1,9 @@
+title: 张云山's Homepage
+page-top-title: Yunshan Zhang | TAGMA
+top-section-bg-text: Be what you wanna be ！
+home-subtitle: Yunshan Zhang&ensp;|&ensp;张云山
+copyright-text: '&copy; TAGMA Group 2025-2028. All Rights Reserved.'
+permissions:
+  contents: read
+  pages: write
+  id-token: write   # 这个极其重要，用于生成 OIDC 令牌

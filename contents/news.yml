@@ -1,0 +1,25 @@
+# TAGMA News 轮播数据
+# 改这个文件 + 刷新浏览器即可看到效果。每条一个 date + text，image 可选（不填就是纯文字卡片）。
+# 下面四条是真实照片（来自 code/img/News/2026.06~09），但文字是我按画面内容写的中性描述，
+# 不确定具体人物/事项，正式上线前请换成准确的动态文字。
+items:
+  - date: "2026.09"
+    text: 计算机科学与技术学院数据挖掘与分析实验室2026届毕业合影。
+    image: static/assets/img/news-2026-09.jpg
+  - date: "2026.08"
+    text: 毕业季留影。
+    image: static/assets/img/news-2026-08.jpg
+  - date: "2026.07"
+    text: "“心所致 梦必达”2026 年毕业季合影。"
+    image: static/assets/img/news-2026-07.jpg
+  - date: "2026.06"
+    text: TAGMA 小组合影。
+    image: static/assets/img/news-2026-06.jpg
+  - date: "2026.05"
+    text: 张三（示例）的论文被 NeurIPS 2026 接收（Accepted）。
+  - date: "2026.04"
+    text: TAGMA 迎来新学期，欢迎李四、王五（示例）加入课题组。
+  - date: "2026.03"
+    text: 组会分享：图神经网络在分子性质预测中的最新进展（示例）。
+  - date: "2026.02"
+    text: 赵六（示例）在校级学科竞赛中获二等奖。

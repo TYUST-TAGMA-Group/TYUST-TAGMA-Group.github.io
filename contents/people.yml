@@ -1,0 +1,101 @@
+# TAGMA People 页面数据
+# 改这个文件 + 刷新浏览器即可看到效果，不需要碰 HTML/CSS/JS。
+#
+# 每个人的字段：
+#   name       必须，展示的姓名
+#   title      可选，职称，如 Lecturer / Professor
+#   subtitle   可选，第二行说明，如 TAGMA Group Leader
+#   period     可选，入学/在职时间，如 "Ph.D. Student (09/2023–)"
+#   supervisor 可选，导师这一行的完整文字（自己写全，不会自动加前缀），
+#              如 "Supervised by Prof. Jie Wang" 或 "Co-supervised with Prof. Jianghui Cai"
+#   research   可选，研究方向关键词
+#   photo      可选，照片路径（相对网站根目录）；不填则显示占位头像图标
+#   homepage   可选，个人主页链接 -> 头像下方图标行里的"地球"图标，也控制头像本身
+#              是否可点击跳转。没有自己主页的人先不填这个字段，头像就只是
+#              静态图片（不是假链接），等本人有真实主页了再补上这行：
+#                - 页面本身就在这个仓库里（比如 author/zhang-yunshan/ 这种）：
+#                  填仓库内的相对路径，如 author/zhang-yunshan/index.html
+#                - 页面部署在别的仓库/账号下：直接填那个真实的线上地址
+#   links      可选，联系方式，对应图标行里的另外三个图标：
+#                links:
+#                  email: name@example.com        -> 信封图标，点了是 mailto:
+#                  github: https://github.com/xxx -> GitHub 图标
+#                  scholar: https://scholar.google.com/citations?user=xxx -> 学术帽图标（Google Scholar）
+#
+#   注意：每张卡片头像下方现在固定显示 4 个图标（地球/信封/GitHub/学术帽），
+#   跟参考站 mingli-ai.github.io/graphme.github.io 一样。没填 homepage/links
+#   对应字段的，图标还是会显示，但先指向占位假链接（点了不会跳转），等真实
+#   链接到位了再填对应字段替换掉。姓名本身不再是超链接，只有这一排小图标可点。
+#
+# showAcademicAdvisors: 对应命名/People 文档里的"方案 A / 方案 B"。
+# 这份是方案 B 的独立预览站（8081 端口，含 Academic Advisors）。
+# 方案 A 在 8082 端口（TAGMA-Group-A 目录），两边内容需要同步维护到最终定版。
+showAcademicAdvisors: true
+
+academicAdvisors:
+  - name: Jianghui Cai 蔡江辉
+    title: Professor
+    photo: static/assets/img/cai-jianghui.png
+  - name: Haifeng Yang 杨海峰
+    title: Professor
+    photo: static/assets/img/yang-haifeng.png
+
+groups:
+  - role: Group Leader
+    members:
+      - name: Jie Wang 王杰
+        title: Lecturer
+        subtitle: TAGMA Group Leader
+        research: Graph Machine Learning, Continual Graph Learning
+        photo: static/assets/img/wang-jie.jpg
+
+  - role: Faculty Members
+    members:
+      - name: Yating Li 栗雅婷
+        title: Lecturer
+        photo: static/assets/img/li-yating.jpg
+
+  - role: Ph.D. Students
+    members:
+      - name: Guojiao An 安国娇
+        period: Ph.D. Student (09/2025–)
+        photo: static/assets/img/an-guojiao.jpg
+
+  - role: Master Students
+    members:
+      - name: Lupeng Fang 方路鹏
+        period: M.S. Student (09/2024–)
+        photo: static/assets/img/fang-lupeng.jpg
+      - name: Liming Zhu 朱黎明
+        period: M.S. Student (09/2024–)
+        photo: static/assets/img/zhu-liming.jpg
+      - name: Guixin Zhao 赵桂锌
+        period: M.S. Student (09/2025–)
+        photo: static/assets/img/zhao-guixin.jpg
+      - name: Yuwei Cheng 程玉威
+        period: M.S. Student (09/2025–)
+        photo: static/assets/img/cheng-yuwei.png
+        supervisor: Supervised by Prof. Haifeng Yang
+        # TODO: 程玉威的主页在他自己的仓库/账号下（xiaotiancai100/Graphic-Learning-Group），
+        # 部署上线后把真实地址填在这里，如 https://xiaotiancai100.github.io/Graphic-Learning-Group/
+      - name: Biyao He 贺弼尧
+        period: M.S. Student (09/2025–)
+        photo: static/assets/img/he-biyao.jpg
+      - name: Yunshan Zhang 张云山
+        period: M.S. Student (09/2025–)
+        photo: static/assets/img/zhang-yunshan.jpg
+        homepage: author/zhang-yunshan/index.html
+      - name: Taofei Lan 兰涛飞
+        period: M.S. Student (09/2026–)
+        photo: static/assets/img/lan-taofei.jpg
+      - name: Xue Ding 丁雪
+        period: M.S. Student (09/2026–)
+        photo: static/assets/img/ding-xue.jpg
+
+alumni:
+  - name: Mengyu Li 李梦宇
+    degree: M.S.
+    year: 2023 – 2026
+  - name: Yaning Zhang 张亚宁
+    degree: M.S.
+    year: 2023 – 2026
