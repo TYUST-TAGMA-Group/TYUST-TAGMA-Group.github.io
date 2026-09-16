@@ -14,7 +14,7 @@
 #              是否可点击跳转。没有自己主页的人先不填这个字段，头像就只是
 #              静态图片（不是假链接），等本人有真实主页了再补上这行：
 #                - 页面本身就在这个仓库里（比如 author/zhang-yunshan/ 这种）：
-#                  填仓库内的相对路径，如 author/zhang-yunshan/index.html
+#                  填仓库内的相对路径（目录式，不用写 index.html），如 author/zhang-yunshan/
 #                - 页面部署在别的仓库/账号下：直接填那个真实的线上地址
 #   links      可选，联系方式，对应图标行里的另外三个图标：
 #                links:
@@ -77,14 +77,14 @@ groups:
         period: M.S. Student (09/2025–)
         photo: static/assets/img/cheng-yuwei.png
         supervisor: Supervised by Prof. Haifeng Yang
-        homepage: author/chengyuwei/index.html
+        homepage: author/chengyuwei/
       - name: Biyao He 贺弼尧
         period: M.S. Student (09/2025–)
         photo: static/assets/img/he-biyao.jpg
       - name: Yunshan Zhang 张云山
         period: M.S. Student (09/2025–)
         photo: static/assets/img/zhang-yunshan.jpg
-        homepage: author/zhang-yunshan/index.html
+        homepage: author/zhang-yunshan/
       - name: Taofei Lan 兰涛飞
         period: M.S. Student (09/2026–)
         photo: static/assets/img/lan-taofei.jpg
