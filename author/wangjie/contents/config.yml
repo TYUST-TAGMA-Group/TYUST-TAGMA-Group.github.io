@@ -1,0 +1,9 @@
+title: Jie Wang 王杰's Homepage
+page-top-title: Jie Wang | TAGMA
+top-section-bg-text: Be what you wanna be ！
+home-subtitle: Jie Wang&ensp;|&ensp;王杰
+copyright-text: '&copy; TAGMA Group 2026-2028. All Rights Reserved.'
+permissions:
+  contents: read
+  pages: write
+  id-token: write   # 这个极其重要，用于生成 OIDC 令牌

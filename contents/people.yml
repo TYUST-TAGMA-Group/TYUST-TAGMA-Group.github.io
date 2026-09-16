@@ -49,30 +49,36 @@ groups:
         subtitle: TAGMA Group Leader
         research: Graph Machine Learning, Continual Graph Learning
         photo: static/assets/img/wang-jie.jpg
+        homepage: author/wangjie/
 
   - role: Faculty Members
     members:
       - name: Yating Li 栗雅婷
         title: Lecturer
         photo: static/assets/img/li-yating.jpg
+        homepage: author/liyating/
 
   - role: Ph.D. Students
     members:
       - name: Guojiao An 安国娇
         period: Ph.D. Student (09/2025–)
         photo: static/assets/img/an-guojiao.jpg
+        homepage: author/anguojiao/
 
   - role: Master Students
     members:
       - name: Lupeng Fang 方路鹏
         period: M.S. Student (09/2024–)
         photo: static/assets/img/fang-lupeng.jpg
+        homepage: author/fanglupeng/
       - name: Liming Zhu 朱黎明
         period: M.S. Student (09/2024–)
         photo: static/assets/img/zhu-liming.jpg
+        homepage: author/zhuliming/
       - name: Guixin Zhao 赵桂锌
         period: M.S. Student (09/2025–)
         photo: static/assets/img/zhao-guixin.jpg
+        homepage: author/zhaoguixin/
       - name: Yuwei Cheng 程玉威
         period: M.S. Student (09/2025–)
         photo: static/assets/img/cheng-yuwei.png
@@ -81,6 +87,7 @@ groups:
       - name: Biyao He 贺弼尧
         period: M.S. Student (09/2025–)
         photo: static/assets/img/he-biyao.jpg
+        homepage: author/hebiyao/
       - name: Yunshan Zhang 张云山
         period: M.S. Student (09/2025–)
         photo: static/assets/img/zhang-yunshan.jpg
@@ -88,9 +95,11 @@ groups:
       - name: Taofei Lan 兰涛飞
         period: M.S. Student (09/2026–)
         photo: static/assets/img/lan-taofei.jpg
+        homepage: author/lantaofei/
       - name: Xue Ding 丁雪
         period: M.S. Student (09/2026–)
         photo: static/assets/img/ding-xue.jpg
+        homepage: author/dingxue/
 
 alumni:
   - name: Mengyu Li 李梦宇
