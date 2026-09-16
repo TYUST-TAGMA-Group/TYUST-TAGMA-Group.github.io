@@ -28,9 +28,10 @@
 #   链接到位了再填对应字段替换掉。姓名本身不再是超链接，只有这一排小图标可点。
 #
 # showAcademicAdvisors: 对应命名/People 文档里的"方案 A / 方案 B"。
-# 这份是方案 B 的独立预览站（8081 端口，含 Academic Advisors）。
-# 方案 A 在 8082 端口（TAGMA-Group-A 目录），两边内容需要同步维护到最终定版。
-showAcademicAdvisors: true
+# 已定版采用方案 A：People 页面不单列 Academic Advisors 板块，
+# 下面 academicAdvisors 里的两位教授数据保留着（不用删），只是不会渲染出来，
+# 以后想恢复方案 B 只需要把这个值改回 true。
+showAcademicAdvisors: false
 
 academicAdvisors:
   - name: Jianghui Cai 蔡江辉
