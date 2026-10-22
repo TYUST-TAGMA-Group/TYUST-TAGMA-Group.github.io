@@ -101,7 +101,9 @@ groups:
         photo: static/assets/img/ding-xue.jpg
         homepage: author/dingxue/
       - name: 李柯澍
+        homepage: author/likeshu/
       - name: 张懿丹
+        homepage: author/zhangyidan/
 
 alumni:
   - name: Mengyu Li 李梦宇
