@@ -101,8 +101,10 @@ groups:
         photo: static/assets/img/ding-xue.jpg
         homepage: author/dingxue/
       - name: 李柯澍
+        period: M.S. Student (09/2026–)
         homepage: author/likeshu/
       - name: 张懿丹
+        period: M.S. Student (09/2026–)
         homepage: author/zhangyidan/
 
 alumni:
