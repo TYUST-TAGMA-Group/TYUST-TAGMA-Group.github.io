@@ -122,14 +122,20 @@ section .main-body{
     margin-bottom: 2.5rem;
 }
 
-#avatar {
+.profile-avatar-frame {
     width: 11rem;
     height: 14rem;
-    object-fit: cover;
-    object-position: center 22%;
     border-radius: 50%;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
     flex: none;
+}
+
+#avatar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(10px, -12px) scale(1.22);
 }
 
 .profile-name-col {
@@ -171,7 +177,7 @@ section .main-body{
         font-size: 1.9rem;
     }
 
-    #avatar {
+    .profile-avatar-frame {
         width: 8rem;
         height: 8rem;
     }
