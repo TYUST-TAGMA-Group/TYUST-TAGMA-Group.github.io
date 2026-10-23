@@ -3,18 +3,6 @@
 # 2026.10 的四条按图片文件名写成简短说明；2026.06~09 的四条按画面内容写成中性描述。
 # 发布前可根据活动的正式名称和实际日期进一步核对文字。
 items:
-  - date: "2026.09"
-    text: 计算机科学与技术学院数据挖掘与分析实验室2026届毕业合影。
-    image: static/assets/img/news-2026-09.jpg
-  - date: "2026.08"
-    text: 毕业季留影。
-    image: static/assets/img/news-2026-08.jpg
-  - date: "2026.07"
-    text: "“心所致 梦必达”2026 年毕业季合影。"
-    image: static/assets/img/news-2026-07.jpg
-  - date: "2026.06"
-    text: TAGMA 小组合影。
-    image: static/assets/img/news-2026-06.jpg
   - date: "2026.10"
     text: TAGMA 小组举行 2026 级新成员迎新活动。
     image: static/assets/img/news-2026-10-welcome.jpg
@@ -27,6 +15,18 @@ items:
   - date: "2026.10"
     text: 2026 年第一学期研究生论坛活动合影。
     image: static/assets/img/news-2026-10-forum.jpg
+  - date: "2026.09"
+    text: 计算机科学与技术学院数据挖掘与分析实验室2026届毕业合影。
+    image: static/assets/img/news-2026-09.jpg
+  - date: "2026.08"
+    text: 毕业季留影。
+    image: static/assets/img/news-2026-08.jpg
+  - date: "2026.07"
+    text: "“心所致 梦必达”2026 年毕业季合影。"
+    image: static/assets/img/news-2026-07.jpg
+  - date: "2026.06"
+    text: TAGMA 小组合影。
+    image: static/assets/img/news-2026-06.jpg
 
 # 以下四条是新增新闻时可参考的模板；目前不在页面显示。
 #  - date: "2026.05"
