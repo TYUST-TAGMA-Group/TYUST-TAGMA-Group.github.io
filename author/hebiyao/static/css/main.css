@@ -135,7 +135,7 @@ section .main-body{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: translate(10px, -12px) scale(1.22);
+    transform: translate(22px, -28px) scale(1.4);
 }
 
 .profile-name-col {
@@ -180,6 +180,10 @@ section .main-body{
     .profile-avatar-frame {
         width: 8rem;
         height: 8rem;
+    }
+
+    #avatar {
+        transform: translate(14px, -18px) scale(1.4);
     }
 
     .profile-header {
