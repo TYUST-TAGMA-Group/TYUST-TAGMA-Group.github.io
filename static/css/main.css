@@ -609,6 +609,10 @@ section .main-body p {
     object-position: center 22%;
 }
 
+.person-avatar img[src$="zhang-yidan.jpg"] {
+    object-position: center top;
+}
+
 .person-avatar i {
     font-size: 3.5rem;
     color: #b9bee8;
