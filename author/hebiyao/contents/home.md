@@ -1,4 +1,4 @@
-I am pursuing a master's degree in Computer Science at Taiyuan University of Science and Technology (2025–2028), as a member of the TAGMA group.
+I'm an M.S. student in Big Data Technology and Engineering at Taiyuan University of Science and Technology (2025–2028), and a member of the TAGMA group.
 
 #### Current Project
 Large Model-Augmented Graph OOD<br>
