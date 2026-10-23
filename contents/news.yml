@@ -1,7 +1,7 @@
 # TAGMA News 轮播数据
 # 改这个文件 + 刷新浏览器即可看到效果。每条一个 date + text，image 可选（不填就是纯文字卡片）。
-# 下面四条是真实照片（来自 code/img/News/2026.06~09），但文字是我按画面内容写的中性描述，
-# 不确定具体人物/事项，正式上线前请换成准确的动态文字。
+# 2026.10 的四条按图片文件名写成简短说明；2026.06~09 的四条按画面内容写成中性描述。
+# 发布前可根据活动的正式名称和实际日期进一步核对文字。
 items:
   - date: "2026.09"
     text: 计算机科学与技术学院数据挖掘与分析实验室2026届毕业合影。
@@ -15,11 +15,25 @@ items:
   - date: "2026.06"
     text: TAGMA 小组合影。
     image: static/assets/img/news-2026-06.jpg
-  - date: "2026.05"
-    text: 张三（示例）的论文被 NeurIPS 2026 接收（Accepted）。
-  - date: "2026.04"
-    text: TAGMA 迎来新学期，欢迎李四、王五（示例）加入课题组。
-  - date: "2026.03"
-    text: 组会分享：图神经网络在分子性质预测中的最新进展（示例）。
-  - date: "2026.02"
-    text: 赵六（示例）在校级学科竞赛中获二等奖。
+  - date: "2026.10"
+    text: TAGMA 小组举行 2026 级新成员迎新活动。
+    image: static/assets/img/news-2026-10-welcome.jpg
+  - date: "2026.10"
+    text: 朱黎明在 TAGMA 小组组会上作汇报。
+    image: static/assets/img/news-2026-10-zhu-liming.jpg
+  - date: "2026.10"
+    text: 方路鹏在 TAGMA 小组组会上作汇报。
+    image: static/assets/img/news-2026-10-fang-lupeng.jpg
+  - date: "2026.10"
+    text: 2026 年第一学期研究生论坛活动合影。
+    image: static/assets/img/news-2026-10-forum.jpg
+
+# 以下四条是新增新闻时可参考的模板；目前不在页面显示。
+#  - date: "2026.05"
+#    text: 张三（示例）的论文被 NeurIPS 2026 接收（Accepted）。
+#  - date: "2026.04"
+#    text: TAGMA 迎来新学期，欢迎李四、王五（示例）加入课题组。
+#  - date: "2026.03"
+#    text: 组会分享：图神经网络在分子性质预测中的最新进展（示例）。
+#  - date: "2026.02"
+#    text: 赵六（示例）在校级学科竞赛中获二等奖。

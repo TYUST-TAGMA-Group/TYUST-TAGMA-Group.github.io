@@ -180,7 +180,7 @@ function newsListItemsHtml(items) {
 // Renders successive candidate pages into an offscreen element (same width
 // as the real list column) to measure their height against targetHeight,
 // without ever flashing the measurement DOM on screen.
-function computeNewsPages(sortedItems, targetHeight) {
+function computeNewsPages(orderedItems, targetHeight) {
     const listCol = document.querySelector('.news-list-col');
     const width = listCol ? listCol.getBoundingClientRect().width : 400;
 
@@ -193,7 +193,7 @@ function computeNewsPages(sortedItems, targetHeight) {
 
     const pages = [];
     let currentPage = [];
-    sortedItems.forEach(it => {
+    orderedItems.forEach(it => {
         const candidate = currentPage.concat([it]);
         wrap.innerHTML = newsListItemsHtml(candidate);
         if (wrap.offsetHeight <= targetHeight || currentPage.length === 0) {
@@ -231,10 +231,11 @@ function renderNewsListPage() {
 }
 
 function initNewsPagination(items) {
-    const sorted = [...(items || [])].sort((a, b) => b.date.localeCompare(a.date));
+    // Match the carousel order, which follows the order written in news.yml.
+    const ordered = [...(items || [])];
     const carouselEl = document.getElementById('news-md');
     const targetHeight = carouselEl ? carouselEl.offsetHeight : 400;
-    newsPageState = { pages: computeNewsPages(sorted, targetHeight), page: 1 };
+    newsPageState = { pages: computeNewsPages(ordered, targetHeight), page: 1 };
     renderNewsListPage();
     document.getElementById('news-pagination').addEventListener('click', event => {
         const btn = event.target.closest('[data-page]');
