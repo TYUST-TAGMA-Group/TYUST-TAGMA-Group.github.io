@@ -132,15 +132,6 @@ section .main-body{
     flex: none;
 }
 
-.profile-avatar-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #eef0fb;
-    color: #b9bee8;
-    font-size: 5rem;
-}
-
 .profile-name-col {
     display: flex;
     flex-direction: column;
