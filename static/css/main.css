@@ -613,6 +613,10 @@ section .main-body p {
     object-position: center top;
 }
 
+.person-avatar img[src$="he-biyao.jpg"] {
+    transform: translate(10px, -12px) scale(1.22);
+}
+
 .person-avatar i {
     font-size: 3.5rem;
     color: #b9bee8;
